@@ -16,7 +16,7 @@
 <header>
     <section class="header">
         <nav class="navbar">
-            <img src="{% static 'img/logo.svg' %}" alt="logo">
+            <img src="{% static 'img/logo.svg' %}" alt="logo" class="navbar__logo">
             <div class="container">
                 <div class="col-left"></div>
                 <div class="col-right">
@@ -39,6 +39,21 @@
                 </li>
             </ul>
         </nav>
+
+        <div class="hero container">
+            <div class="col-left">
+                <img src="{% static 'img/tablets.png' %}" alt="tablets" class="hero__img">
+            </div>
+            <div class="col-right">
+                <p class="hero__title">
+                    Мобильное приложение для medtech и digital health
+                </p>
+
+                <button class="btn hero__btn">
+                    Оставить заявку
+                </button>
+            </div>
+        </div>
     </section>
 </header>
 </body>

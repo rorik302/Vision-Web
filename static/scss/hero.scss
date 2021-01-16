@@ -1,0 +1,20 @@
+.hero {
+  display: flex;
+  width: 100%;
+  padding-top: 35px !important;
+
+  &__img {
+    width: 385px;
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 600;
+    margin-top: 20px;
+    width: 455px;
+  }
+
+  &__btn {
+    margin-top: 90px;
+  }
+}
