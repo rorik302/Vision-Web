@@ -1,0 +1,45 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>RS — мобильные приложения для клиник, аптек и медицинских компаний</title>
+</head>
+<body>
+<header>
+    <section class="header">
+        <nav class="navbar">
+            <img src="{% static 'img/logo.svg' %}" alt="logo">
+            <div class="container">
+                <div class="col-left"></div>
+                <div class="col-right">
+                    <ul class="navbar__menu">
+                        <li class="navbar__item">
+                            <a href="#" class="navbar__link">Наши работы</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#" class="navbar__link">Зачем вам приложение?</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#" class="navbar__link">Как мы делаем приложения?</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="navbar__menu navbar__right-menu">
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link">Оставить заявку</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+</header>
+</body>
+</html>

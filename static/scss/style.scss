@@ -1,0 +1,38 @@
+@import "header";
+@import "navbar";
+@import "hero";
+
+* {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.col-left {
+  width: 43.5%;
+}
+
+.col-right {
+  width: 56.5%;
+}

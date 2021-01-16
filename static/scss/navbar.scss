@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  height: 125px;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    position: absolute;
+    left: 40px;
+  }
+
+  &__menu {
+    display: flex;
+  }
+
+  &__link {
+    padding: 0 25px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:hover {
+      color: #ff1d43;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    }
+  }
+
+  &__right-menu {
+    position: absolute;
+    right: 40px;
+
+    .navbar__link {
+      font-weight: 600;
+    }
+  }
+}
