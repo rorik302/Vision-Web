@@ -1,6 +1,9 @@
+@import "grid";
+@import "colors";
 @import "header";
 @import "navbar";
 @import "hero";
+@import "block";
 
 * {
   box-sizing: border-box;
@@ -25,20 +28,6 @@ a, a:hover, a:active, a:visited {
 
 p {
   margin: 0;
-}
-
-.container {
-  display: flex;
-  width: 1160px;
-  margin: 0 auto;
-}
-
-.col-left {
-  width: 43.5%;
-}
-
-.col-right {
-  width: 56.5%;
 }
 
 .btn {
