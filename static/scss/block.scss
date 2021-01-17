@@ -1,6 +1,5 @@
 .block {
-  background-color: #f7f7f7;
-  padding: 100px 0;
+  padding-top: 100px;
 
   &__title {
     width: 80%;
@@ -42,6 +41,10 @@
     margin: 20px 0;
     overflow: hidden;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     * {
       font-size: 18px;
       font-weight: 500;
@@ -72,6 +75,7 @@
 
   &__hr {
     width: 100%;
+    margin-top: 100px;
     border-bottom: 1px solid #e4e4e4;
   }
 }

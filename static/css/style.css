@@ -45,6 +45,10 @@
   color: #ffffff;
 }
 
+.main {
+  background-color: #f7f7f7;
+}
+
 .navbar {
   display: flex;
   height: 125px;
@@ -98,8 +102,7 @@
 }
 
 .block {
-  background-color: #f7f7f7;
-  padding: 100px 0;
+  padding-top: 100px;
 }
 .block__title {
   width: 80%;
@@ -135,6 +138,9 @@
   margin: 20px 0;
   overflow: hidden;
 }
+.block__content:last-child {
+  margin-bottom: 0;
+}
 .block__content * {
   font-size: 18px;
   font-weight: 500;
@@ -159,6 +165,7 @@
 }
 .block__hr {
   width: 100%;
+  margin-top: 100px;
   border-bottom: 1px solid #e4e4e4;
 }
 
