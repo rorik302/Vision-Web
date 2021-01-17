@@ -187,11 +187,12 @@
   margin-top: 15px;
   font-size: 20px;
   line-height: 1.4;
+  padding-inline-end: 10%;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
