@@ -1,6 +1,10 @@
 .block {
   padding-top: 100px;
 
+  &:last-child {
+    padding-bottom: 50px;
+  }
+
   &__title {
     width: 80%;
     color: #262621;

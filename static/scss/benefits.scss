@@ -1,0 +1,19 @@
+.benefits {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    margin-bottom: 50px;
+  }
+
+  &__img {
+    max-height: 92px;
+    max-width: 80px;
+  }
+
+  &__text {
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}

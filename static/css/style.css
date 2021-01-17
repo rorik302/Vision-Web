@@ -104,6 +104,9 @@
 .block {
   padding-top: 100px;
 }
+.block:last-child {
+  padding-bottom: 50px;
+}
 .block__title {
   width: 80%;
   color: #262621;
@@ -167,6 +170,23 @@
   width: 100%;
   margin-top: 100px;
   border-bottom: 1px solid #e4e4e4;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+}
+.benefits__item {
+  margin-bottom: 50px;
+}
+.benefits__img {
+  max-height: 92px;
+  max-width: 80px;
+}
+.benefits__text {
+  margin-top: 15px;
+  font-size: 20px;
+  line-height: 1.4;
 }
 
 * {
