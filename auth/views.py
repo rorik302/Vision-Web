@@ -1,4 +1,8 @@
+from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import send_mail
+from django.urls import reverse
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -25,4 +29,17 @@ class AuthViewSet(GenericViewSet):
         client.set_password(serializer.validated_data['password'])
         client.save()
 
+        current_site = get_current_site(request)
+        verification_url = reverse('verification')
+
+        send_mail(
+            subject='Активация аккаунта',
+            message=f'Для активации аккаунта перейдите по ссылке: \n'
+                    f'http://{current_site.domain}{verification_url}?uuid={client.uuid}',
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[client.email],
+            fail_silently=False,
+        )
+
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
+    
