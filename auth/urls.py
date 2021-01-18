@@ -10,6 +10,7 @@ router.register('', AuthViewSet)
 urlpatterns = [
     path('jwt/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('jwt/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('verify/', AuthViewSet.as_view({'get': 'verification'}), name='verification')
 ]
 
 urlpatterns += router.urls

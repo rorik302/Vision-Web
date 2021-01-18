@@ -42,4 +42,12 @@ class AuthViewSet(GenericViewSet):
         )
 
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
-    
+
+    def verification(self, request, *args, **kwargs):
+        uuid = request.query_params['uuid']
+        client = client_model.objects.filter(uuid=uuid).first()
+        if client:
+            client.is_active = True
+            client.save()
+            return Response(status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
