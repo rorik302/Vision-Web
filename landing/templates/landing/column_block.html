@@ -1,0 +1,44 @@
+<section class="block">
+    <div class="container flex-column">
+        <span class="block__title">{{ title }}</span>
+
+        <div class="block__content bg-blue">
+            <div class="col-left padding-40">
+                <span class="block__content-title">{{ card_1_title }}</span>
+                <p class="block__content-text">
+                    {{ card_1_text }}
+                </p>
+                <span class="block__content-tags">{{ card_1_footer }}</span>
+            </div>
+            <div class="col-right">
+                <img src="{{ card_1_img.url }}" class="block__content-img">
+            </div>
+        </div>
+
+        <div class="block__content bg-purple-gradient">
+            <div class="col-left padding-40">
+                <span class="block__content-title">{{ card_2_title }}</span>
+                <p class="block__content-text">
+                    {{ card_2_text }}
+                </p>
+                <span class="block__content-tags">{{ card_2_footer }}</span>
+            </div>
+            <div class="col-right">
+                <img src="{{ card_2_img.url }}" class="block__content-img">
+            </div>
+        </div>
+
+        <div class="block__content bg-marina">
+            <div class="col-left padding-40">
+                <span class="block__content-title">{{ card_3_title }}</span>
+                <p class="block__content-text">
+                    {{ card_3_text }}
+                </p>
+                <span class="block__content-tags">{{ card_3_footer }}</span>
+            </div>
+            <div class="col-right">
+                <img src="{{ card_3_img.url }}" class="block__content-img">
+            </div>
+        </div>
+    </div>
+</section>

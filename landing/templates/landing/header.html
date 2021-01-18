@@ -1,0 +1,43 @@
+<section class="header">
+    <nav class="navbar">
+        <img src="{{ logo.url }}" alt="logo" class="navbar__logo">
+        <div class="container">
+            <div class="col-left"></div>
+            <div class="col-right">
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link">Наши работы</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link">Зачем вам приложение?</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link">Как мы делаем приложения?</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="navbar__menu navbar__right-menu">
+            <li class="navbar__item">
+                <a href="#" class="navbar__link">Оставить заявку</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <div class="col-left">
+                <img src="{{ hero_img.url }}" alt="tablets" class="hero__img">
+            </div>
+            <div class="col-right">
+                <p class="hero__title">
+                    {{ title }}
+                </p>
+
+                <button class="btn hero__btn">
+                    Оставить заявку
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

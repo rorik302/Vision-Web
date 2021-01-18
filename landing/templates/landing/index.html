@@ -10,25 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>RS — мобильные приложения для клиник, аптек и медицинских компаний</title>
+    <title>{{ title }}</title>
 </head>
 <body>
 <header>
-    <section class="header">
-        {% include 'landing/navbar.html' %}
-
-        {% include 'landing/hero.html' %}
-    </section>
+    {% firstof header %}
 </header>
-
-<main class="main">
-    {% include 'landing/descriptions.html' %}
-
-    {% include 'landing/divider.html' %}
-
-    {% include 'landing/works.html' %}
-
-    {% include 'landing/benefits.html' %}
+<main>
+    {{ content | safe }}
 </main>
 </body>
 </html>
