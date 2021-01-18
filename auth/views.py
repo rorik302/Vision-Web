@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.sites.shortcuts import get_current_site
@@ -7,6 +9,7 @@ from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
+from rest_framework_simplejwt.tokens import RefreshToken
 
 from . import serializers
 
@@ -19,6 +22,8 @@ class AuthViewSet(GenericViewSet):
     def get_serializer_class(self):
         if self.action == 'register':
             return serializers.ClientRegisterSerializer
+        if self.action == 'login':
+            return serializers.ClientLoginSerializer
 
     @action(methods=['POST'], detail=False)
     def register(self, request, *args, **kwargs):
@@ -51,3 +56,22 @@ class AuthViewSet(GenericViewSet):
             client.save()
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_400_BAD_REQUEST)
+
+    @action(methods=['POST'], detail=False)
+    def login(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        client = client_model.objects.get(email=serializer.validated_data['email'])
+
+        token = RefreshToken.for_user(client)
+
+        data = {
+            'access': str(token.access_token),
+            'refresh': str(token)
+        }
+
+        client.last_login = datetime.now()
+        client.save()
+
+        return Response(data, status=status.HTTP_200_OK)
