@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
+from django.shortcuts import redirect
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.decorators import action
@@ -51,10 +52,10 @@ class AuthViewSet(GenericViewSet):
     def verification(self, request, *args, **kwargs):
         uuid = request.query_params['uuid']
         client = client_model.objects.filter(uuid=uuid).first()
-        if client:
+        if client and not client.is_active:
             client.is_active = True
             client.save()
-            return Response(status=status.HTTP_200_OK)
+            return redirect(reverse('client-login'))
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
     @action(methods=['POST'], detail=False)
