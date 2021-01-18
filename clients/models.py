@@ -1,6 +1,7 @@
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.db.models.signals import pre_save
 
 
 class ClientManager(BaseUserManager):
@@ -11,7 +12,6 @@ class ClientManager(BaseUserManager):
             raise ValueError('Пароль должен быть указан')
 
         email = self.normalize_email(email)
-        kwargs.setdefault('is_active', False)
 
         client = self.model(email=email, **kwargs)
         client.set_password(password)
@@ -43,3 +43,15 @@ class Client(AbstractUser):
 
     class Meta:
         db_table = 'clients'
+
+    @staticmethod
+    def pre_save(sender, instance, **kwargs):
+        if instance._state.adding is True:
+            if instance.is_superuser:
+                instance.is_active = True
+            else:
+                instance.is_active = False
+                instance.is_staff = True
+
+
+pre_save.connect(Client.pre_save, Client)
