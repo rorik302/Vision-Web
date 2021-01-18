@@ -1,0 +1,26 @@
+{% load static %}
+
+<nav class="navbar">
+    <img src="{% static 'img/logo.svg' %}" alt="logo" class="navbar__logo">
+    <div class="container">
+        <div class="col-left"></div>
+        <div class="col-right">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link">Наши работы</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link">Зачем вам приложение?</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link">Как мы делаем приложения?</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="navbar__menu navbar__right-menu">
+        <li class="navbar__item">
+            <a href="#" class="navbar__link">Оставить заявку</a>
+        </li>
+    </ul>
+</nav>

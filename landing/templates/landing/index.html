@@ -15,173 +15,20 @@
 <body>
 <header>
     <section class="header">
-        <nav class="navbar">
-            <img src="{% static 'img/logo.svg' %}" alt="logo" class="navbar__logo">
-            <div class="container">
-                <div class="col-left"></div>
-                <div class="col-right">
-                    <ul class="navbar__menu">
-                        <li class="navbar__item">
-                            <a href="#" class="navbar__link">Наши работы</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a href="#" class="navbar__link">Зачем вам приложение?</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a href="#" class="navbar__link">Как мы делаем приложения?</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <ul class="navbar__menu navbar__right-menu">
-                <li class="navbar__item">
-                    <a href="#" class="navbar__link">Оставить заявку</a>
-                </li>
-            </ul>
-        </nav>
+        {% include 'landing/navbar.html' %}
 
-        <div class="hero">
-            <div class="container">
-                <div class="col-left">
-                    <img src="{% static 'img/tablets.png' %}" alt="tablets" class="hero__img">
-                </div>
-                <div class="col-right">
-                    <p class="hero__title">
-                        Мобильное приложение для medtech и digital health
-                    </p>
-
-                    <button class="btn hero__btn">
-                        Оставить заявку
-                    </button>
-                </div>
-            </div>
-        </div>
+        {% include 'landing/hero.html' %}
     </section>
 </header>
 
 <main class="main">
-    <section class="block">
-        <div class="container">
-            <div class="col-left">
-                <p class="block__title">
-                    Приложения для медицинской отрасли - это зарождающаяся тенденция
-                </p>
-            </div>
-            <div class="col-right">
-                <p class="block__description">
-                    Уже принят закон о онлайн-продаже лекарств, появляется все больше сервисов для занятий спортом
-                    онлайн и для контроля ментального здоровья.
-                </p>
-                <p class="block__description">
-                    Мобильное приложение нужно не только для того, чтобы не отстать от конкурентов, но и для того, чтобы
-                    быть ближе к клиентам. Предлагаем вам вместе с нами создать продукт — на основе ваших идей и нашей
-                    экспертизы.
-                </p>
-                <div class="block__stats">
-                    <div class="stats">
-                        <span class="stats__percent">
-                        20%
-                    </span>
-                        <p class="stats__text">
-                            ежегодный рост медтех-сегмента
-                        </p>
-                    </div>
-                    <div class="stats">
-                        <span class="stats__percent">
-                        90%
-                    </span>
-                        <p class="stats__text">
-                            запросов с мобильных устройств
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include 'landing/descriptions.html' %}
 
-    <div class="container">
-        <div class="block__hr"></div>
-    </div>
+    {% include 'landing/divider.html' %}
 
-    <section class="block">
-        <div class="container flex-column">
-            <span class="block__title">Наши работы</span>
+    {% include 'landing/works.html' %}
 
-            <div class="block__content bg-blue">
-                <div class="col-left padding-40">
-                    <span class="block__content-title">Kelinda</span>
-                    <p class="block__content-text">
-                        Приложение для хранения результатов медицинских анализов, общения с врачом и планирования приема
-                        препаратов.
-                    </p>
-                    <span class="block__content-tags">Дизайн • Аналитика • Разработка</span>
-                </div>
-                <div class="col-right">
-                    <img src="{% static 'img/cabinet.png' %}" alt="cabinet" class="block__content-img">
-                </div>
-            </div>
-
-            <div class="block__content bg-purple-gradient">
-                <div class="col-left padding-40">
-                    <span class="block__content-title">Viafit</span>
-                    <p class="block__content-text">
-                        Сервис для удаленных занятий фитнесом с тренером и контроля результатов.
-                    </p>
-                    <span class="block__content-tags">Дизайн • Аналитика • Разработка</span>
-                </div>
-                <div class="col-right">
-                    <img src="{% static 'img/reports.png' %}" alt="reports" class="block__content-img">
-                </div>
-            </div>
-
-            <div class="block__content bg-marina">
-                <div class="col-left padding-40">
-                    <span class="block__content-title">YourD</span>
-                    <p class="block__content-text">
-                        Сервис для дистанционной записи к врачам и хранения медицинских карт.
-                    </p>
-                    <span class="block__content-tags">Дизайн • Аналитика • Разработка</span>
-                </div>
-                <div class="col-right">
-                    <img src="{% static 'img/doctor.png' %}" alt="doctor" class="block__content-img">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="block">
-        <div class="container">
-            <div class="col-left">
-                <p class="block__title">
-                    Зачем медицинской компании приложение?
-                </p>
-            </div>
-            <div class="col-right">
-                <ul class="benefits">
-                    <li class="benefits__item">
-                        <img src="{% static 'img/flash.png' %}" alt="flash" class="benefits__img">
-                        <p class="benefits__text">
-                            Удобный канал коммуникации для пациентов и клиентов. Практичнее и быстрее, чем сайт.
-                        </p>
-                    </li>
-                    <li class="benefits__item">
-                        <img src="{% static 'img/heart.png' %}" alt="heart" class="benefits__img">
-                        <p class="benefits__text">
-                            Инструмент продаж. Мотивируйте аудиторию при помощи push-уведомлений, персональных
-                            предложений и программ лояльности.
-                        </p>
-                    </li>
-                    <li class="benefits__item">
-                        <img src="{% static 'img/chart.png' %}" alt="chart" class="benefits__img">
-                        <p class="benefits__text">
-                            Доступ к новой аудитории. Молодые люди используют телефоны для всего: покупок, общения,
-                            чтения информации. Станьте ближе к ним.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    {% include 'landing/benefits.html' %}
 </main>
 </body>
 </html>
