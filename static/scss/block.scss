@@ -1,5 +1,5 @@
 .block {
-  padding-top: 100px;
+  padding: 50px 0;
 
   &:last-child {
     padding-bottom: 50px;
@@ -23,6 +23,7 @@
 
   &__stats {
     display: flex;
+    flex-wrap: wrap;
 
     & .stats {
       width: 50%;

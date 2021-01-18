@@ -102,7 +102,7 @@
 }
 
 .block {
-  padding-top: 100px;
+  padding: 50px 0;
 }
 .block:last-child {
   padding-bottom: 50px;
@@ -123,6 +123,7 @@
 }
 .block__stats {
   display: flex;
+  flex-wrap: wrap;
 }
 .block__stats .stats {
   width: 50%;
@@ -178,6 +179,9 @@
 }
 .benefits__item {
   margin-bottom: 50px;
+}
+.benefits__item:last-child {
+  margin-bottom: 0;
 }
 .benefits__img {
   max-height: 92px;
