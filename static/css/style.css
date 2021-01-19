@@ -98,6 +98,7 @@
   font-weight: 600;
   margin-top: 20px;
   width: 455px;
+  overflow-wrap: break-word;
 }
 .hero__btn {
   margin-top: 90px;
