@@ -5,9 +5,11 @@ from django.template.loader import render_to_string
 class ColumnBlock(models.Model):
     title = models.CharField(max_length=100)
     landing = models.ForeignKey('landing.Landing', on_delete=models.CASCADE)
+    sorting = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
         db_table = 'column_blocks'
+        ordering = ['sorting']
         verbose_name = 'Column_block'
         verbose_name_plural = 'Column_blocks'
 
@@ -28,9 +30,11 @@ class ColumnBlock(models.Model):
 class RowBlock1(models.Model):
     title = models.CharField(max_length=100)
     landing = models.ForeignKey('landing.Landing', on_delete=models.CASCADE)
+    sorting = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
         db_table = 'row_blocks_1'
+        ordering = ['sorting']
         verbose_name = 'Row_Block_1'
         verbose_name_plural = 'Row_Blocks_1'
 
@@ -50,9 +54,11 @@ class RowBlock1(models.Model):
 class RowBlock2(models.Model):
     title = models.CharField(max_length=100)
     landing = models.ForeignKey('landing.Landing', on_delete=models.CASCADE)
+    sorting = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
         db_table = 'row_blocks_2'
+        ordering = ['sorting']
         verbose_name = 'Row_Block_2'
         verbose_name_plural = 'Row_Blocks_2'
 
