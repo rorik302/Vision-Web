@@ -104,7 +104,6 @@ class NavbarContact(models.Model):
 
 class RowBlock1(models.Model):
     title = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
     landing = models.ForeignKey(Landing, on_delete=models.CASCADE)
 
     class Meta:
@@ -112,7 +111,7 @@ class RowBlock1(models.Model):
         verbose_name_plural = 'Row_Blocks_1'
 
     def __str__(self):
-        return self.name
+        return self.title
 
     @property
     def template(self):
