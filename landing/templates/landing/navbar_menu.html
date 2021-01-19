@@ -1,0 +1,7 @@
+<ul class="navbar__menu">
+    {% if items %}
+        {% for item in items %}
+            {{ item.template }}
+        {% endfor %}
+    {% endif %}
+</ul>

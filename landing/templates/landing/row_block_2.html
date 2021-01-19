@@ -9,24 +9,9 @@
         </div>
         <div class="col-right">
             <ul class="benefits">
-                <li class="benefits__item">
-                    <img src="{{ block_1_img.url }}" class="benefits__img">
-                    <p class="benefits__text">
-                        {{ block_1_text }}
-                    </p>
-                </li>
-                <li class="benefits__item">
-                    <img src="{{ block_2_img.url }}" class="benefits__img">
-                    <p class="benefits__text">
-                        {{ block_2_text }}
-                    </p>
-                </li>
-                <li class="benefits__item">
-                    <img src="{{ block_3_img.url }}" class="benefits__img">
-                    <p class="benefits__text">
-                        {{ block_3_text }}
-                    </p>
-                </li>
+                {% for benefit in benefits %}
+                    {{ benefit.template }}
+                {% endfor %}
             </ul>
         </div>
     </div>

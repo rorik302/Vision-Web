@@ -6,29 +6,14 @@
             </p>
         </div>
         <div class="col-right">
-            <p class="block__description">
-                {{ text_1 }}
-            </p>
-            <p class="block__description">
-                {{ text_2 }}
-            </p>
+            {% for paragraph in paragraphs %}
+                {{ paragraph.template }}
+            {% endfor %}
+
             <div class="block__stats">
-                <div class="stats">
-                        <span class="stats__percent">
-                        {{ percent_1 }}%
-                    </span>
-                    <p class="stats__text">
-                        {{ percent_1_text }}
-                    </p>
-                </div>
-                <div class="stats">
-                        <span class="stats__percent">
-                        {{ percent_2 }}%
-                    </span>
-                    <p class="stats__text">
-                        {{ percent_2_text }}
-                    </p>
-                </div>
+                {% for percent in percents %}
+                    {{ percent.template }}
+                {% endfor %}
             </div>
         </div>
     </div>

@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <img src="{{ logo }}" alt="logo" class="navbar__logo">
+    <div class="container">
+        <div class="col-left"></div>
+        <div class="col-right">
+            {% if menu %}
+                {{ menu }}
+            {% endif %}
+        </div>
+    </div>
+
+
+    <ul class="navbar__menu navbar__right-menu">
+        {{ contact }}
+    </ul>
+</nav>

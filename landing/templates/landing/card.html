@@ -1,0 +1,12 @@
+<div class="block__content{% if background %} {{ background }}{% endif %}">
+    <div class="col-left padding-40">
+        <span class="block__content-title">{{ title }}</span>
+        <p class="block__content-text">
+            {{ text }}
+        </p>
+        <span class="block__content-tags">{{ footer }}</span>
+    </div>
+    <div class="col-right">
+        <img src="{{ image.url }}" class="block__content-img">
+    </div>
+</div>

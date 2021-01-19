@@ -1,0 +1,19 @@
+<div class="hero">
+    <div class="container">
+        <div class="col-left">
+            <img src="{{ image.url }}" class="hero__img">
+        </div>
+        <div class="col-right">
+            {% if text %}
+                <p class="hero__title">
+                    {{ text }}
+                </p>
+            {% endif %}
+
+
+            <button class="btn hero__btn" onclick="openModal()">
+                {{ button_text }}
+            </button>
+        </div>
+    </div>
+</div>
