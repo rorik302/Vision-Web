@@ -14,7 +14,7 @@ class ClientListView(ListAPIView):
 
         query = self.request.query_params
 
-        if 'is_active' in query and query['is_active'] == 'True':
+        if 'is_active' in query and query['is_active'].lower() == 'true':
             return client_model.objects.filter(is_active=True)
-        
+
         return client_model.objects.all()
