@@ -14,14 +14,17 @@ class LandingView(View):
 
     @staticmethod
     def get(request):
-        landing = Landing.objects.select_related(
-            'header', 'header__hero', 'header__navbar',
-            'header__navbar__menu', 'header__navbar__contact') \
-            .prefetch_related(
-            'rowblock1_set',
-            'rowblock2_set',
-            'columnblock_set',
-        ).get()
+        try:
+            landing = Landing.objects.select_related(
+                'header', 'header__hero', 'header__navbar',
+                'header__navbar__menu', 'header__navbar__contact') \
+                .prefetch_related(
+                'rowblock1_set',
+                'rowblock2_set',
+                'columnblock_set',
+            ).get()
+        except Landing.DoesNotExist:
+            raise ValueError('Нужно создать экземпляр лэндинга')
 
         content = generate_content([
             landing.rowblock1_set.all(),
