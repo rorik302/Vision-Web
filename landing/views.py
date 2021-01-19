@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 from django.views import View
 
 from landing.forms import ContactForm
-from landing.models import Landing
+from landing.models.landing_models import Landing
 from landing.utils import generate_content
 
 
@@ -37,7 +37,7 @@ class LandingView(View):
 
         context = {
             'title': landing.page_title,
-            'header': landing.header.template,
+            'header': landing.header.template if landing.header else None,
             'content': content,
             'form': form_template
         }
