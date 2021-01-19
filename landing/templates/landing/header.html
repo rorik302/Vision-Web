@@ -1,5 +1,5 @@
 <section class="header">
-    {% if navbar %}{{ navbar }}{% endif %}
+    {% firstof navbar %}
 
-    {% if hero %}{{ hero }}{% endif %}
+    {% firstof hero %}
 </section>

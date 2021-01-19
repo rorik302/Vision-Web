@@ -80,7 +80,7 @@ class Navbar(TemplateMixin):
     @property
     def template(self):
         context = {
-            'logo': self.logo.url,
+            'logo': self.logo,
             'menu': self.menu.template,
             'contact': self.contact.template
         }

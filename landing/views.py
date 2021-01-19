@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 from django.views import View
 
 from landing.forms import ContactForm
-from landing.models.landing_models import Landing
+from landing.services import get_landing
 from landing.utils import generate_content
 
 
@@ -14,17 +14,7 @@ class LandingView(View):
 
     @staticmethod
     def get(request):
-        try:
-            landing = Landing.objects.select_related(
-                'header', 'header__hero', 'header__navbar',
-                'header__navbar__menu', 'header__navbar__contact') \
-                .prefetch_related(
-                'rowblock1_set',
-                'rowblock2_set',
-                'columnblock_set',
-            ).get()
-        except Landing.DoesNotExist:
-            raise ValueError('Нужно создать экземпляр лэндинга')
+        landing = get_landing()
 
         content = generate_content([
             landing.rowblock1_set.all(),

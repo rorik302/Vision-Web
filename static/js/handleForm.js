@@ -27,7 +27,7 @@ $("#contact-form").on('submit', function (e) {
 
     $.ajax({
         method: $(this).attr('method'),
-        url: $(this).attr('action'),
+        url: '/',
         headers: {"X-CSRFToken": getCookie("csrftoken")},
         data: $(this).serialize(),
         dataType: 'json',
