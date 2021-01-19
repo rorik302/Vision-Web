@@ -23,7 +23,7 @@ class LandingView(View):
         ])
 
         form = ContactForm()
-        form_template = render_to_string('landing/contact_form.html', {'form': form})
+        form_template = render_to_string('landing/contact_form.html', {'form': form}, request=request)
 
         context = {
             'title': landing.page_title,
